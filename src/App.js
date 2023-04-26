@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import Table1 from './components/Table1';
 
 function App() {
 	const [type, setType] = useState('multiplication');
@@ -40,24 +41,24 @@ function App() {
 
 	// generateCalculus(4, division);
 	return (
-			<div className='w-full h-screen bg-black'>
-				<div className='w-full h-full flex flex-col items-center py-7'>
-					<h1 className='text-white text-3xl font-bold '>Choose the type of operation:</h1>
-					<div className='w-full h-auto flex justify-around py-7'>
-						<button onClick={() => setType('multiplication')} className='text-white text-8xl font-bold bg-red-400 p-3 px-8 rounded-md focus:bg-red-700'>X</button>
-						<button onClick={() => setType('division')} className='text-white text-9xl font-bold bg-blue-400 p-3 px-8 rounded-md focus:bg-blue-700'>÷</button>
-					</div>
-					<div className='w-full h-auto flex justify-around py-7 pb-10'>
-					<button onClick={generateHandle} className='text-white text-4xl font-bold bg-green-600 p-3 px-8 rounded-md'>Generate operations</button>
-					</div>
-					<div>
-						{operation !== [] && operation.map((singleOperation) => (
-							<h1 className='text-white text-3xl font-bold '>{singleOperation}</h1>
-						))}
-					</div>
-				</div>
-
-			</div>
+		<Table1 />
+			// <div className='w-full h-screen bg-black'>
+			// 	<div className='w-full h-full flex flex-col items-center py-7'>
+			// 		<h1 className='text-white text-3xl font-bold '>Choose the type of operation:</h1>
+			// 		<div className='w-full h-auto flex justify-around py-7'>
+			// 			<button onClick={() => setType('multiplication')} className='text-white text-8xl font-bold bg-red-400 p-3 px-8 rounded-md focus:bg-red-700'>X</button>
+			// 			<button onClick={() => setType('division')} className='text-white text-9xl font-bold bg-blue-400 p-3 px-8 rounded-md focus:bg-blue-700'>÷</button>
+			// 		</div>
+			// 		<div className='w-full h-auto flex justify-around py-7 pb-10'>
+			// 		<button onClick={generateHandle} className='text-white text-4xl font-bold bg-green-600 p-3 px-8 rounded-md'>Generate operations</button>
+			// 		</div>
+			// 		<div>
+			// 			{operation !== [] && operation.map((singleOperation) => (
+			// 				<h1 className='text-white text-3xl font-bold '>{singleOperation}</h1>
+			// 			))}
+			// 		</div>
+			// 	</div>
+			// </div>
 	);
 }
 export default App;
