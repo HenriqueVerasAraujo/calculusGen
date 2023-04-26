@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function Calculus() {
     const [type, setType] = useState('multiplication');
 	const [operation, setOperation] = useState([]);
+    const navigate = useNavigate();
 
 	const division = () => {
 		const firstNumber = Math.floor(Math.random()*(999-100+1)+100);
@@ -51,6 +53,9 @@ export default function Calculus() {
 							<h1 className='text-white text-3xl font-bold '>{singleOperation}</h1>
 						))}
 					</div>
+                    <div className='w-full h-auto flex justify-center pt-[40%]'>
+                        <button className='text-white bg-blue-600 font-bold text-3xl p-3 rounded-md ' onClick={() => navigate('/tables')}>Tables</button>
+                    </div>
 				</div>
 			</div>
 	);
