@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function TableComponent() {
+
+export default function TableCompHard() {
     const [operation, setOperation] = useState('');
     const [number, setNumber] = useState(10);
     const [result, setResult] = useState(0);
     const [starthandle, setStartHandle] = useState(false);
     const navigate = useNavigate();
 
-	const randomTable = () => {
-		const firstNumber = Math.floor(Math.random() * 10);
-		const secondNumber = Math.floor(Math.random() * 10);
+    const randomTableHard = () => {
+		const firstNumber = Math.floor(Math.random() * (9 - 5) + 5);
+		const secondNumber = Math.floor(Math.random() * (9 - 5) + 5);
         const result = firstNumber * secondNumber;
         setResult(result);
 		const newTab = `${firstNumber} x ${secondNumber} = `
@@ -20,19 +21,19 @@ export default function TableComponent() {
     const startTimer = () => {
         setInterval(() => {
             setNumber((prev) => prev - 1);
-        }, 1000);
+        }, 500);
     };
 
     useEffect(() => {
         if (number < -2) {
             setNumber(10);
-            randomTable();
+            randomTableHard();
         }
     }, [number]);
 
     const handleStartButton = () => {
         setStartHandle(true);
-        randomTable();
+        randomTableHard();
         startTimer();
     };
 
@@ -64,7 +65,7 @@ export default function TableComponent() {
                     )}
                 </div>
                 <div className='w-full h-auto flex justify-center pt-[19%] pb-3'>
-                    <button className='text-white bg-red-700 font-bold text-3xl p-3 rounded-md ' onClick={() => navigate('/hard')}>Hard Mode</button>
+                    <button className='text-white bg-blue-700 font-bold text-3xl p-3 rounded-md ' onClick={() => navigate('/tables')}>Normal Mode</button>
                 </div>
                 <div className='w-full h-auto flex justify-center'>
                     <button className='text-white bg-blue-400 font-bold text-3xl p-3 rounded-md ' onClick={() => navigate('/')}>Return</button>
