@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Calculus from './pages/Calculus';
 import TableGen from './pages/TableGen';
 import TableGenHard from './pages/TableGenHard';
+import TableUltra from './pages/TableUltra'
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 			<Route exact path="/" element={ <Calculus/> } />
 			<Route exact path="/tables" element={ <TableGen/> } />
 			<Route exact path="/hard" element={ <TableGenHard/> } />
+			<Route exact path="/ultra" element={ <TableUltra/> } />
 		</Routes>
 	   </BrowserRouter>
 	);

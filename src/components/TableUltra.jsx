@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function TableCompHard() {
+export default function TableUltra() {
     const [operation, setOperation] = useState('');
     const [number, setNumber] = useState(10);
     const [result, setResult] = useState(0);
@@ -10,7 +10,7 @@ export default function TableCompHard() {
     const navigate = useNavigate();
 
     const randomTableHard = () => {
-        const firstNumber = Math.floor(Math.random() * (10 - 4) + 4);
+		const firstNumber = Math.floor(Math.random() * (10 - 4) + 4);
 		const secondNumber = Math.floor(Math.random() * (10 - 4) + 4);
         const result = firstNumber * secondNumber;
         setResult(result);
@@ -21,7 +21,7 @@ export default function TableCompHard() {
     const startTimer = () => {
         setInterval(() => {
             setNumber((prev) => prev - 1);
-        }, 500);
+        }, 200);
     };
 
     useEffect(() => {
